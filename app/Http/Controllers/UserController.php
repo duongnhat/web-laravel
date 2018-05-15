@@ -10,7 +10,7 @@ use App\User;
 class UserController extends BaseController {
 
     public function listUser() {
-        $data = User::all();
+        $data = User::paginate(5);
         $dulieu['data'] = $data;
         return view('user.list-user', $dulieu);
     }

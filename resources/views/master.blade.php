@@ -18,7 +18,6 @@ Licence URI: http://www.os-templates.com/template-terms
 </head>
 <body>
     <a href="/create-user">Create</a>
-    <a href="/edit-user">Edit</a>
     <a href="/view-user">List User</a>
 @yield('content')
 </body>
