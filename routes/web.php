@@ -30,8 +30,8 @@ route::get('trangchu',[
 route::get('postform', ['as'=>'postForm','uses'=>'PageController@postForm']);
 
 route::get('list-user', ['uses' => 'UserController@list']);
-route::get('edit-user', ['uses' => 'UserController@edit']);
-route::post('save-user', ['uses' => 'UserController@save']);
+route::get('/edit-user/{id}', ['uses' => 'UserController@getUser']);
+route::post('save-user', ['uses' => 'UserController@edit']);
 route::get('create-user', ['uses'=> 'UserController@create']);
 route::post('save-news', ['uses' => 'NewsController@save']);
 route::get('create-news', ['uses'=> 'NewsController@create']);

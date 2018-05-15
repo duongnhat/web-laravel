@@ -11,6 +11,7 @@
       <th scope="col">Full Name</th>
       <th scope="col">Email</th>
       <th scope="col">Remember Token</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -20,7 +21,8 @@
       <td>{{$value->id}}</td>
       <td>{{$value->full_name}}</td>
       <td>{{$value->email}}</td>
-      <td>{{$value->remmember_token}}</td>
+      <td>{{$value->remember_token}}</td>
+      <td><a href="edit-user/{{$value->id}}">Edit</a></td>
     </tr>
 
 @endforeach
