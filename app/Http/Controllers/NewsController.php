@@ -11,10 +11,13 @@ class NewsController extends BaseController {
 
     public function save(Request $request) {
         $data = $request->all();
+        $file = $request->file('photo');
+        $nameImage = $file->getClientOriginalName();
+        $file->move('upfile', $nameImage);
         $news = new News();
         $news->title = $data['title'];
         $news->content = $data['content'];
-        $news->image = 'image';
+        $news->image = $nameImage;
         $news->save();
         return redirect('create-news');
     }

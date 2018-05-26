@@ -31,8 +31,14 @@ route::get('postform', ['as'=>'postForm','uses'=>'PageController@postForm']);
 
 route::get('list-user', ['uses' => 'UserController@list']);
 route::get('/edit-user/{id}', ['uses' => 'UserController@getUser']);
-route::post('save-user', ['uses' => 'UserController@edit']);
+route::post('save-user', ['uses' => 'UserController@save']);
 route::get('create-user', ['uses'=> 'UserController@create']);
 route::post('save-news', ['uses' => 'NewsController@save']);
 route::get('create-news', ['uses'=> 'NewsController@create']);
 route::get('view-user', ['uses'=> 'UserController@listUser']);
+route::post('to-create-user', ['uses' => 'UserController@save']);
+route::get('/view-profile-user/{id}', ['uses'=> 'AuthController@profile']);
+route::post('login-user', ['uses' => 'AuthController@login']);
+
+route::get('login', ['uses' => 'AuthController@checkLogin']);
+route::get('logout', ['uses' => 'AuthController@logout']);
