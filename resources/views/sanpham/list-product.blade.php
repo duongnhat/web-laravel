@@ -8,48 +8,28 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="/view-product">Làm mới</a>
         </li>
         <li class="breadcrumb-item active">Tables</li>
       </ol>
 <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Example</div>
+          <i class="fa fa-table"></i> Danh sách sản phẩm</div>
         <div class="card-body">
           <div class="table-responsive">
-<table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">Full Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phái</th>
-      <th scope="col">Birth Day</th>
-      <th scope="col">Profile</th>
-      <th scope="col">Kích Hoạt</th>
-      <th scope="col">Edit</th>
-    </tr>
-  </thead>
-  <tbody>
+
 @foreach($data as $value)
 
-    <tr>
-      <td>{{$value->id}}</td>
-      <td>{{$value->full_name}}</td>
-      <td>{{$value->email}}</td>
-      <td>{{$value->sex}}</td>
-      <td>{{$value->birthday}}</td>
-      <td><a href="view-profile-user/{{$value->id}}">Profile</a></td>
-      <td><input type="checkbox" name="kichhoat" value="kichhoat" {{$value->kichhoat}}></td>
-      <td><a href="edit-user/{{$value->id}}">Edit</a></td>
-    </tr>
+<a href="/edit-product/{{$value->id}}"> <figure class="figure">
+  <img src="/image product/{{$value->image}}" class="figure-img img-fluid rounded" alt="khong co anh" width="320px" height="240px">
+  <figcaption class="figure-caption">{{$value->name}}  giá: {{$value->unit_price}}đ</figcaption>
+    </figure>  </a>
 
 @endforeach
-  </tbody>
-</table>
+
                         </div>
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        <div class="card-footer small text-muted"></div>
       </div>
           </div>
     <!-- /.container-fluid-->

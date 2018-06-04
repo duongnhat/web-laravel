@@ -1,6 +1,8 @@
 @extends('master')
 @section('content')
 
+<div class="content-wrapper">
+    <div class="container-fluid">
 <form action="http://truongnhat.com/save-user" method="post" enctype="multipart/form-data">
     @csrf
   <div class="form-row">
@@ -46,12 +48,13 @@
         <label for="exampleFormControlFile1">Example file input</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1" name="photo">
       </div>
-  </div>
+  
   <input type="radio" name="sex" value="male" {{$data->male}} required> Male<br>
   <input type="radio" name="sex" value="female" {{$data->female}} required> Female<br>
   
     <input type="hidden" name="id" value="{{$data->id}}">
   <button class="btn btn-primary" type="submit">Edit</button>
 </form>
-
+    </div>
+</div>
 @endsection

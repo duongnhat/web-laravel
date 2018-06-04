@@ -10,10 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+route::get('/', ['uses' => 'UserController@listUser']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/user', 'UserController@index');
 Route::get('/HoTen/{ten}',function($ten){
 	return "duong truong " . $ten;
@@ -42,3 +40,20 @@ route::post('login-user', ['uses' => 'AuthController@login']);
 
 route::get('login', ['uses' => 'AuthController@checkLogin']);
 route::get('logout', ['uses' => 'AuthController@logout']);
+
+route::get('create-product', ['uses'=> 'SanPhamController@create']);
+route::post('save-product', ['uses' => 'SanPhamController@save']);
+route::get('view-product', ['uses'=> 'SanPhamController@viewProduct']);
+route::get('/edit-product/{id}', ['uses' => 'SanPhamController@getProduct']);
+
+route::get('nhapdiem', function(){
+    return view('postForm');
+})->name('nhapdiem');
+
+route::get('loi', function(){
+    echo 'duong turong nhat';
+})->name('loi');
+
+route::get('diem', function(){
+    echo 'da co diem';
+})->middleware('myMiddle')->name('diem');

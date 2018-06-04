@@ -1,6 +1,8 @@
 @extends('master')
 @section('content')
 
+  <div class="content-wrapper">
+    <div class="container-fluid">
 <form action="http://truongnhat.com/save-news" method="post" enctype="multipart/form-data">
     @csrf
   <div class="form-row">
@@ -23,5 +25,7 @@
   </div>
   <button class="btn btn-primary" type="submit">Submit form</button>
 </form>
-
+        <div/>
+        <div/>
+        
 @endsection

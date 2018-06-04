@@ -1,4 +1,4 @@
-<form action="{{route('postForm')}}" method="post">
-	<input type="text" name="HoTen">
+<form action="{{route('diem')}}" method="get">
+	<input type="text" name="diem" value="">
 	<input type="submit">
 </form>

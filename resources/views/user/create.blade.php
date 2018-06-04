@@ -1,6 +1,8 @@
 @extends('master')
 @section('content')
 
+<div class="content-wrapper">
+    <div class="container-fluid">
 <form action="http://truongnhat.com/to-create-user" method="post">
     @csrf
   <div class="form-row">
@@ -35,5 +37,6 @@
   <button class="btn btn-primary" type="submit">Create</button>
   <button  type="submit"><a href="/view-user">Cancel</a></button>
 </form>
-
+</div>
+    </div>
 @endsection

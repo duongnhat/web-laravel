@@ -1,10 +1,15 @@
 @extends('master')
 @section('content')
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
 @if(Auth::check())
     
     <img src="/upfile/{{$data->avata}}" width="720px" height="350px"/>
-    <a href="{{url('logout')}}">Logout</a>
     @else
 <h2>Bạn chưa đăng nhập</h2>
 @endif
+    </div>
+  </div>
+
 @endsection
