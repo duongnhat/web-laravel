@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 use App\Product;
 
 class SanPhamController extends Controller
@@ -35,11 +36,14 @@ class SanPhamController extends Controller
             }
         }
         $product->save();
-        return redirect('view-product');
+        return redirect('/admin/tools/view-product');
     }
     
     public function viewProduct() {
         $data = Product::paginate(6);
+        if(Auth::check()){
+            $dulieu['quyen'] = Auth::user()->admin;
+        }
         $dulieu['data'] = $data;
         return view('sanpham.list-product', $dulieu);
     }

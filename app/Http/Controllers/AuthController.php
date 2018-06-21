@@ -12,7 +12,7 @@ class AuthController extends Controller
         $password = $request['password'];
         if(Auth::attempt(['full_name'=>$name,'password'=>$password, 'kichhoat'=>'checked'])){
             $dulieu = ['data'=>Auth::user()];
-            return view('user.profile', $dulieu);
+            return redirect('/');
         }else{
             echo 'Tên đăng nhập hay mật khẩu không chính xác, hoặc tài khoản chưa được kích hoạt.';
         }
@@ -20,8 +20,7 @@ class AuthController extends Controller
     
     public function checkLogin(){
         if(Auth::check()){
-            echo 'Bạn chưa đăng xuất.';
-            return view('user.profile', ['data'=>Auth::user()]);
+            return redirect('/');
         }else{
             return view('user.login');
         }
@@ -38,7 +37,7 @@ class AuthController extends Controller
         if(Auth::check() && Auth::user()->admin == 'checked'){
             return view('user.admin', $dulieu);
         }else{
-            echo 'Bạn không được quyền xem thông tin này.';
+            echo '<h2>Bạn không được quyền xem thông tin này</h2>';
         }
         
     }

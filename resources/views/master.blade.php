@@ -12,33 +12,35 @@
   <link href="/layout/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="/layout/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/styles.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="/layout/css/sb-admin.css" rel="stylesheet">
+  <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="/view-user">TRƯỜNG NHẬT</a>
+    <a class="navbar-brand" href="/">TRƯỜNG NHẬT</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="/create-user">
+          <a class="nav-link" href="/admin/tools/create-user">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">CREATE USER</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="/create-product">
+          <a class="nav-link" href="/admin/tools/create-product">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">CREATE PRODUCT</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="/view-user">
+          <a class="nav-link" href="/admin/tools/view-user">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Tables</span>
           </a>
@@ -50,10 +52,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="/create-product">Create</a>
+              <a href="/admin/tools/create-product">Create</a>
             </li>
             <li>
-              <a href="/view-product">show</a>
+              <a href="/admin/tools/view-product">show</a>
             </li>
           </ul>
         </li>

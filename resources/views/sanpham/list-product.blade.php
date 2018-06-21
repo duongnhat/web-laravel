@@ -8,7 +8,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="/view-product">Làm mới</a>
+          Bảng
         </li>
         <li class="breadcrumb-item active">Tables</li>
       </ol>
@@ -16,18 +16,23 @@
         <div class="card-header">
           <i class="fa fa-table"></i> Danh sách sản phẩm</div>
         <div class="card-body">
-          <div class="table-responsive">
+          <div class="table-responsive"> 
 
 @foreach($data as $value)
+@if(Auth::check() && ($quyen == 'checked'))
+    <a href="/admin/tools/edit-product/{{$value->id}}"> 
+@endif
 
-<a href="/edit-product/{{$value->id}}"> <figure class="figure">
-  <img src="/image product/{{$value->image}}" class="figure-img img-fluid rounded" alt="khong co anh" width="320px" height="240px">
-  <figcaption class="figure-caption">{{$value->name}}  giá: {{$value->unit_price}}đ</figcaption>
-    </figure>  </a>
-
+  <figure class="figure">
+    <img id="hinhanh" onmouseover="inf(this)" data-noidung="{{$value->description}}" onmouseout="unshow()" src="/image product/{{$value->image}}" class="figure-img img-fluid rounded" alt="khong co anh" width="320px" height="240px">
+        <figcaption class="figure-caption">{{$value->name}}  giá: {{$value->unit_price}}đ</figcaption>
+    </figure> 
+@if(Auth::check() && ($quyen == 'checked'))
+  </a>
+@endif
 @endforeach
 
-                        </div>
+                    </div>
         </div>
         <div class="card-footer small text-muted"></div>
       </div>
@@ -63,6 +68,7 @@
         </div>
       </div>
     </div>
+    <div id="showinfor"></div> 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -72,9 +78,36 @@
     <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="vendor/js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="vendor/js/sb-admin-datatables.min.js"></script>
+    <script language="javascript">
+            // Lấy đối tượng
+            function inf(a){
+              
+              $('#showinfor').html($(a).attr('data-noidung'));
+              $('#showinfor').fadeIn();
+              //document.getElementById("showinfor").style.display = 'block';
+              //$('#hinhanh').css('width', '350px');
+
+            };
+            function unshow(){
+              document.getElementById("showinfor").style.display = 'none';
+              //$('#hinhanh').css('width', '320px');
+            };
+            
+            $('.figure').mousemove(function(event){
+              var moveX = (($(window).width()) - event.pageX);
+              var moveY = (($(window).height()) - event.pageY);
+
+             $('#showinfor').css('margin-left', (-moveX + 930) + 'px');
+             $('#showinfor').css('margin-top', (-moveY +350) + 'px');
+             //$('#showinfor').css('margin-left', (event.pageX) + 'px');
+             //$('#showinfor').css('margin-top', (event.pageY) + 'px');
+            });
+
+            $('.figure')
+        </script>
 {!! $data->links() !!}
 
 @endsection

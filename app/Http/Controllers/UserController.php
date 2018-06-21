@@ -58,13 +58,13 @@ class UserController extends BaseController {
             if($data['password']===$data['re-enter-password']){
                 $user1->save();
                 echo "<div class='alert alert-primary' role='alert'> Thành công </div>";
-                return redirect('view-user');
+                return redirect('/admin/tools/view-user');
             }else{
                 echo 'Password không trùng khớp.';
             }
         }else{
             $user1->save();
-            return redirect('view-user');
+            return redirect('/admin/tools/view-user');
         }
         
     } 

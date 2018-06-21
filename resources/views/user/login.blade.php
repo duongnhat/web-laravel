@@ -1,5 +1,5 @@
-@extends('master')
-@section('content')
+@extends('adminPage')
+@section('contents')
 <!DOCTYPE html>
 <html lang="en">
 

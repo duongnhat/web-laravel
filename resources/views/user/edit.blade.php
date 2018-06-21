@@ -3,7 +3,7 @@
 
 <div class="content-wrapper">
     <div class="container-fluid">
-<form action="http://truongnhat.com/save-user" method="post" enctype="multipart/form-data">
+<form action="http://truongnhat.com/admin/tools/save-user" method="post" enctype="multipart/form-data">
     @csrf
   <div class="form-row">
     <div class="col-md-4 mb-3">
