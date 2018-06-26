@@ -39,19 +39,30 @@ class SanPhamController extends Controller
         return redirect('/admin/tools/view-product');
     }
     
-    public function viewProduct() {
+    public function viewProductAdmin() {
+        $soluong = Product::count();
         $data = Product::paginate(6);
-        if(Auth::check()){
+        if(Auth::check() && (Auth::user()->admin)=='checked'){
             $dulieu['quyen'] = Auth::user()->admin;
+            $dulieu['data'] = $data;
+            $dulieu['soluong'] = $soluong;
+            return view('/sanpham/list-product', $dulieu);
+        }else{
+            $dulieu['data'] = $data;
+            $dulieu['soluong'] = $soluong;
+            return view('/sanpham/list-product', $dulieu);
         }
-        $dulieu['data'] = $data;
-        return view('sanpham.list-product', $dulieu);
+        
     }
     
-    protected function inSanPham($product) 
-    {
-        echo "San pham ten {$product->name} co gia {$product->unit_price} dong.";
+    public function viewProductGuest() {
+        $soluong = Product::count();
+        $data = Product::paginate(8);
+        $dulieu['data'] = $data;
+        $dulieu['soluong'] = $soluong;
+        return view('guest.show-sanpham', $dulieu);
     }
+
     
     protected function GetAllProduct() 
     {
@@ -61,19 +72,22 @@ class SanPhamController extends Controller
         }
     }
     
-    protected function getProduct($id) 
+    protected function getProductGuest($id) 
+    {
+        $data = Product::where('id', $id)->first();
+        $dulieu['data'] = $data;
+        $them = Product::paginate(4);
+        $dulieu['them'] = $them;
+        return view('guest.show-single', $dulieu);
+    }
+    
+    protected function getProductAdmin($id) 
     {
         $data = Product::where('id', $id)->first();
         $dulieu['data'] = $data;
         return view('sanpham.edit-product', $dulieu);
     }
     
-    protected function Update() 
-    {
-        $product = Product::find(1);
-        $product->name = 'Ban Tron Lon';
-        $product->save();
-    }
     
     public function create(){
         return view('sanpham.create');

@@ -1,271 +1,282 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<!--[if IE 9]> <html class="no-js ie9 fixed-layout" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js " lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>truong nhat</title>
-  <!-- Bootstrap core CSS-->
-  <link href="/layout/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="/layout/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="/css/styles.css" rel="stylesheet" type="text/css">
-  <!-- Custom styles for this template-->
-  <link href="/layout/css/sb-admin.css" rel="stylesheet">
-  <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Site Meta -->
+    <title>Edulogy</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{{asset('master/images/favicon.ico')}}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{asset('master/images/apple-touch-icon.png')}}">
+
+  <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet"> 
+  
+    <!-- Custom & Default Styles -->
+  <link rel="stylesheet" href="{{asset('master/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('master/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('master/css/carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('master/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('master/style.css')}}">
+
+  <!--[if lt IE 9]>
+    <script src="js/vendor/html5shiv.min.js"></script>
+    <script src="js/vendor/respond.min.js"></script>
+  <![endif]-->
+
 </head>
+<body>  
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="/">TRƯỜNG NHẬT</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="/admin/tools/create-user">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">CREATE USER</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="/admin/tools/create-product">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">CREATE PRODUCT</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="/admin/tools/view-user">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Product</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="/admin/tools/create-product">Create</a>
-            </li>
-            <li>
-              <a href="/admin/tools/view-product">show</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Example Pages</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <a href="login.html">Login Page</a>
-            </li>
-            <li>
-              <a href="register.html">Registration Page</a>
-            </li>
-            <li>
-              <a href="forgot-password.html">Forgot Password Page</a>
-            </li>
-            <li>
-              <a href="blank.html">Blank Page</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">Link</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-envelope"></i>
-            <span class="d-lg-none">Messages
-              <span class="badge badge-pill badge-primary">12 New</span>
-            </span>
-            <span class="indicator text-primary d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
-            </span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
-            <h6 class="dropdown-header">New Messages:</h6>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>David Miller</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>Jane Smith</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>John Doe</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all messages</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-bell"></i>
-            <span class="d-lg-none">Alerts
-              <span class="badge badge-pill badge-warning">6 New</span>
-            </span>
-            <span class="indicator text-warning d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
-            </span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">New Alerts:</h6>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-danger">
-                <strong>
-                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all alerts</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Search for...">
-              <span class="input-group-append">
-                <button class="btn btn-primary" type="button" href="{{url('logout')}}">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
+    <!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src="{{asset('master/images/loader.gif')}}" alt="">
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+        <!-- BEGIN # MODAL LOGIN -->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Begin # DIV Form -->
+                    <div id="div-forms">
+                        <form id="login-form">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="flaticon-add" aria-hidden="true"></span>
+                            </button>
+                            <div class="modal-body">
+                                <input class="form-control" type="text" placeholder="What you are looking for?" required>
+                            </div>
+                        </form><!-- End # Login Form -->
+                    </div><!-- End # DIV Form -->
+                </div>
             </div>
-          </form>
-        </li>
-        <li class="nav-item">
-            @if(Auth::check())
-          <a href="{{url('logout')}}" class="nav-link">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-            @else
-            <a href="/login" class="nav-link">
-            <i class="fa fa-fw fa-sign-out"></i>Login</a>
-            @endif
-        </li>
-      </ul>
-    </div>
-  </nav>
-@yield('content')
- <!-- /.container-fluid-->
-    <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright © Dương Trường Nhật 2018</small>
         </div>
-      </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="{{url('logout')}}">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="/layout/vendor/jquery/jquery.min.js"></script>
-    <script src="/layout/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="/layout/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="/layout/js/sb-admin.min.js"></script>
-  </div>
-</body>
+        <!-- END # MODAL LOGIN -->
 
+        <header class="header">
+            <div class="topbar clearfix">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="col-md-6 col-sm-6 text-left">
+                            <p>
+                                <strong><i class="fa fa-phone"></i></strong> 01686155073 &nbsp;&nbsp;
+                                <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">truongnhat199613@gmail.com</a>
+                            </p>
+                        </div><!-- end left -->
+                        <div class="col-md-6 col-sm-6 hidden-xs text-right">
+                            <div class="social">
+                                <a class="facebook" href="#" data-tooltip="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
+                                <a class="twitter" href="#" data-tooltip="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                <a class="google" href="#" data-tooltip="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                                <a class="linkedin" href="#" data-tooltip="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                                <a class="pinterest" href="#" data-tooltip="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                            </div><!-- end social -->
+                        </div><!-- end left -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end topbar -->
+
+            <div class="container">
+                <nav class="navbar navbar-default yamm">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="logo-normal">
+                            <a class="navbar-brand" href="/"><img src="{{asset('master/images/logo.png')}}" alt=""></a>
+                        </div>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/guest/sanpham">Sản Phẩm</a></li>
+                            <li class="dropdown hassubmenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shop <span class="fa fa-angle-down"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="shop.html">Shop Layout</a></li>
+                                    <li><a href="shop-single.html">Shop Single</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown yamm-fw yamm-half"><a href="#" data-toggle="dropdown" class="dropdown-toggle active">Mega Menu <b class="fa fa-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="yamm-content clearfix">
+                                            <div class="row-fluid">
+                                                <div class="col-md-6 col-sm-6">
+                                                    <h4>Course Pages</h4>
+                                                    <ul>
+                                                        <li><a href="#">Courses Name 01</a></li>
+                                                        <li><a href="#">Courses Name 02</a></li>
+                                                        <li><a href="#">Courses Name 03</a></li>
+                                                        <li><a href="#">Courses Name 04</a></li>
+                                                        <li><a href="#">Courses Name 05</a></li>
+                                                        <li><a href="#">Courses Name 06</a></li>
+                                                        <li><a href="#">Courses Name 07</a></li>
+                                                        <li><a href="#">Courses Name 08</a></li>
+                                                        <li><a href="#">Courses Name 09</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <div class="menu-widget text-center">
+                                                        <div class="image-wrap entry">
+                                                            <img src="{{asset('master/upload/course_01.jpg')}}" alt="" class="img-responsive">
+                                                            <div class="magnifier">
+                                                                 <a href="#" title=""><i class="flaticon-add"></i></a>
+                                                            </div>
+                                                        </div><!-- end image-wrap -->
+                                                        <h5><a href="#">Learning Bootstrap Framework</a></h5>
+                                                        <small>$22.00</small>
+                                                        <a href="#" class="menu-button">View Course</a>
+                                                    </div><!-- end widget -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li class="dropdown hassubmenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <span class="fa fa-angle-down"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="blog.html">Blog Right Sidebar</a></li>
+                                    <li><a href="blog-1.html">Blog Left Sidebar</a></li>
+                                    <li><a href="blog-2.html">Blog Grid Sidebar</a></li>
+                                    <li><a href="blog-3.html">Blog Grid Fullwidth</a></li>
+                                    <li><a href="blog-single.html">Blog Single</a></li>
+                                </ul>
+                            </li>
+                            @if(Auth::check())
+                            <li><a href="/logout">logout</a></li>
+                            @else
+                            <li><a href="/login">login</a></li>
+                            @endif
+                            <li class="iconitem"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-search"></i></a></li>
+                            <li class="iconitem"><a class="shopicon" href="shop-cart.html"><i class="fa fa-shopping-basket"></i> &nbsp;(0)</a></li>
+                        </ul>
+                    </div>
+                </nav><!-- end navbar -->
+            </div><!-- end container -->
+        </header>
+
+
+@yield('content')
+        
+
+        <footer class="section footer noover">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Subscribe Our Newsletter</h3>
+                            <div class="newsletter-widget">
+                                <p>You can opt out of our newsletters at any time.<br> See our <a href="#">privacy policy</a>.</p>
+                                <form class="form-inline" role="search">
+                                    <div class="form-1">
+                                        <input type="text" class="form-control" placeholder="Enter email here..">
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane-o"></i></button>
+                                    </div>
+                                </form>
+                                <img src="{{asset('master/images/payments.png')}}" alt="" class="img-responsive">
+                            </div><!-- end newsletter -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Join us today</h3>
+                            <p>Would you like to earn your profits by joining our team? Join us without losing time.</p>
+                            <a href="#" class="readmore">Became a Teacher</a>
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Popular Tags</h3>
+                            <div class="tags-widget">   
+                                <ul class="list-inline">
+                                    <li><a href="#">course</a></li>
+                                    <li><a href="#">web design</a></li>
+                                    <li><a href="#">development</a></li>
+                                    <li><a href="#">language</a></li>
+                                    <li><a href="#">teacher</a></li>
+                                    <li><a href="#">speaking</a></li>
+                                    <li><a href="#">material</a></li>
+                                    <li><a href="#">css3</a></li>
+                                    <li><a href="#">html</a></li>
+                                    <li><a href="#">learning</a></li>
+                                </ul>
+                            </div><!-- end list-widget -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-2 col-md-2">
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Support</h3>
+                            <div class="list-widget">   
+                                <ul>
+                                    <li><a href="#">Terms of Use</a></li>
+                                    <li><a href="#">Copyrights</a></li>
+                                    <li><a href="#">Create a Ticket</a></li>
+                                    <li><a href="#">Pricing & Plans</a></li>
+                                    <li><a href="#">Carrier</a></li>
+                                    <li><a href="#">Trademark</a></li>
+                                </ul>
+                            </div><!-- end list-widget -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+
+        <div class="copyrights">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <div class="cop-logo">
+                            <a href="#"><img src="{{asset('master/images/logo.png')}}" alt=""></a>
+                        </div>
+                    </div>
+
+                    <div class="pull-right">
+                        <div class="footer-links">
+                            <ul class="list-inline">
+                                <li>Design : <a href="https://html.design">HTML.Design</a></li>
+                                <li>Distributed by : <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </div><!-- end copy -->
+    </div><!-- end wrapper -->
+
+    <!-- jQuery Files -->
+    <script src="{{asset('master/js/jquery.min.js')}}"></script>
+    <script src="{{asset('master/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('master/js/carousel.js')}}"></script>
+    <script src="{{asset('master/js/animate.js')}}"></script>
+    <script src="{{asset('master/js/custom.js')}}"></script>
+    <script src="{{asset('master/js/bootstrap-select.min.js')}}"></script>
+
+    <!-- VIDEO BG PLUGINS -->
+    <script src="{{asset('master/js/videobg.js')}}"></script>
+
+</body>
 </html>

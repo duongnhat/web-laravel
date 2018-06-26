@@ -1,9 +1,9 @@
-@extends('master')
+@extends('adminPage')
 @section('content')
 
   <div class="content-wrapper">
     <div class="container-fluid">
-<form action="http://truongnhat.com/save-product" method="post" enctype="multipart/form-data">
+<form action="http://truongnhat.com/admin/tools/save-product" method="post" enctype="multipart/form-data">
     @csrf
   <div class="form-row">
     <div class="col-md-4 mb-3">

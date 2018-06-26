@@ -1,5 +1,5 @@
 @extends('adminPage')
-@section('contents')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 

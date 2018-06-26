@@ -1,16 +1,8 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-route::get('/', ['uses' => 'SanPhamController@viewProduct']);
+route::get('/', function(){
+    return view('page.trangchu');
+});
 
 route::post('login-user', ['uses' => 'AuthController@login']);
 route::get('login', ['uses' => 'AuthController@checkLogin']);
@@ -33,8 +25,19 @@ route::group(['prefix'=>'admin','middleware'=>'myMiddle'],function()
         
         route::get('create-product', ['uses'=> 'SanPhamController@create']);
         route::post('save-product', ['uses' => 'SanPhamController@save']);
-        route::get('view-product', ['uses'=> 'SanPhamController@viewProduct']);
-        route::get('/edit-product/{id}', ['uses' => 'SanPhamController@getProduct']);
+        route::get('view-product', ['uses'=> 'SanPhamController@viewProductAdmin']);
+        route::get('/edit-product/{id}', ['uses' => 'SanPhamController@getProductAdmin']);
+        });
+    });
+
+    
+    
+    route::group(['prefix'=>'guest','middleware'=>'guest'],function()
+    {
+        route::get('sanpham', ['uses'=> 'SanPhamController@viewProductGuest']);
+        route::get('/chitiet/{id}', ['uses'=> 'sanPhamController@getProductGuest']);
+        route::group(['prefix'=>'tools'],function(){
+
         });
     });
 

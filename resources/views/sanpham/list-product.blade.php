@@ -1,4 +1,4 @@
-@extends('master')
+@extends('adminPage')
 @section('content')
 
 
@@ -23,7 +23,7 @@
     <a href="/admin/tools/edit-product/{{$value->id}}"> 
 @endif
 
-  <figure class="figure">
+  <figure class="figure" id="tooltipp" title="thong tin" data-toggle="tooltip" data-placement="top">
     <img id="hinhanh" onmouseover="inf(this)" data-noidung="{{$value->description}}" onmouseout="unshow()" src="/image product/{{$value->image}}" class="figure-img img-fluid rounded" alt="khong co anh" width="320px" height="240px">
         <figcaption class="figure-caption">{{$value->name}}  giá: {{$value->unit_price}}đ</figcaption>
     </figure> 
@@ -37,6 +37,7 @@
         <div class="card-footer small text-muted"></div>
       </div>
           </div>
+          {!! $data->links() !!}
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -105,9 +106,13 @@
              //$('#showinfor').css('margin-left', (event.pageX) + 'px');
              //$('#showinfor').css('margin-top', (event.pageY) + 'px');
             });
-
-            $('.figure')
+            $(document).ready(function(){
+              $('#tooltipp').tooltip({
+              track:true
+              });
+              $('[data-toggle="tooltip"]').tooltip();
+            });
+              
         </script>
-{!! $data->links() !!}
 
 @endsection

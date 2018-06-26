@@ -11,8 +11,13 @@ class AuthController extends Controller
         $name = $request['name'];
         $password = $request['password'];
         if(Auth::attempt(['full_name'=>$name,'password'=>$password, 'kichhoat'=>'checked'])){
-            $dulieu = ['data'=>Auth::user()];
-            return redirect('/');
+            $dulieu = Auth::user();
+            if($dulieu->admin == 'checked'){
+                return redirect('/admin/tools/view-user');
+            }else{
+                return redirect('/');
+            }
+            
         }else{
             echo 'Tên đăng nhập hay mật khẩu không chính xác, hoặc tài khoản chưa được kích hoạt.';
         }
