@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Product;
 
 class SanPhamController extends Controller
@@ -23,12 +24,13 @@ class SanPhamController extends Controller
         $product->promotion_price = $data['promotion_price'];
         $product->unit = $data['unit'];
         if($request->hasFile('photo')){
-            if(isset($data['id'])){
-                
+            $getdata = Product::where('id', $data['id'])->first();
+            if(isset($data['id']) && isset($getdata->image)){
+                unlink("image product/".$getdata->image);
             }
             $file = $request->file('photo');
             if($file->getClientOriginalExtension() == 'png' || $file->getClientOriginalExtension() == 'jpg'){
-                $nameImage = $data['name'].$file->getClientOriginalName();
+                $nameImage = $getdata['id'].$file->getClientOriginalName();
                 $file->move('image product', $nameImage);
                 $product->image = $nameImage;
             }else{
@@ -88,6 +90,60 @@ class SanPhamController extends Controller
         return view('sanpham.edit-product', $dulieu);
     }
     
+    public function gioHangThem($id){
+        if(Session::has('giohang')){
+            foreach(Session::get('giohang') as $key => $value){
+                if($key == $id){
+                    $gh[$id] = $value + 1;
+                }else{
+                    $gh[$key] = $value;
+                }
+            }
+            if(!isset($gh[$id])){
+                $gh[$id] = 1;
+            }
+        } 
+        Session::put('giohang',$gh);
+        return redirect('/guest/sanpham');
+    }
+    
+    public function gioHang(){
+        foreach(Session::get('giohang') as $key => $value){
+            $dao[] = $key;
+        }
+        $data = Product::find($dao);
+        $dulieu['data'] = $data;
+        return view('guest.giohang', $dulieu);
+    }
+    
+    public function capNhat(Request $request){
+        $data = $request->all();
+        if(Session::has('giohang')){
+            foreach(Session::get('giohang') as $key => $value){
+                if(isset($data[$key])){
+                    $gh[$key] = $data[$key];
+                }else{
+                    $gh[$key] = $value;
+                }
+            }
+        } 
+        Session::put('giohang',$gh);
+        return redirect('/guest/giohang');
+    }
+    
+    public function delete($id){
+        if(Session::has('giohang')){
+            foreach(Session::get('giohang') as $key => $value){
+                if($key == $id){
+                    $gh[$key] = $value;
+                }
+            }
+        } 
+        Session::put('giohang',$gh);
+        return redirect('/guest/giohang');
+    }
+
+
     
     public function create(){
         return view('sanpham.create');

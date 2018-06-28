@@ -32,9 +32,24 @@
     <link rel="stylesheet" href="{{asset('master/style.css')}}">
 
   <!--[if lt IE 9]>
+
     <script src="js/vendor/html5shiv.min.js"></script>
     <script src="js/vendor/respond.min.js"></script>
   <![endif]-->
+    
+
+    <!-- theme stylesheet<link href="{{asset('master/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('master/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('master/css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('master/css/owl.carousel.css')}}" rel="stylesheet">
+    <link href="{{asset('master/css/owl.theme.css')}}" rel="stylesheet">
+    <link href="{{asset('master/css/custom.css')}}" rel="stylesheet">
+    <link href="{{asset('master/css/style.default.css')}}" rel="stylesheet" id="theme-stylesheet">
+    <script src="{{asset('master/js/respond.min.js')}}"></script> -->
+
+
+    <!-- your stylesheet with modifications -->
+    
 
 </head>
 <body>  
@@ -168,7 +183,7 @@
                             <li><a href="/login">login</a></li>
                             @endif
                             <li class="iconitem"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-search"></i></a></li>
-                            <li class="iconitem"><a class="shopicon" href="shop-cart.html"><i class="fa fa-shopping-basket"></i> &nbsp;(0)</a></li>
+                            <li class="iconitem"><a class="shopicon" href="/guest/giohang"><i class="fa fa-shopping-basket"></i> &nbsp;({{count(Session::get('giohang'))}})</a></li>
                         </ul>
                     </div>
                 </nav><!-- end navbar -->
